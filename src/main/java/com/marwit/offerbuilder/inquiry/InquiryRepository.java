@@ -1,6 +1,6 @@
-package com.marwit.offerbuilder.customer;
+package com.marwit.offerbuilder.inquiry;
 
-import com.marwit.offerbuilder.customer.Inquiry;
+import com.marwit.offerbuilder.inquiry.Inquiry;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface InquiryRepository extends JpaRepository<Inquiry, Long> {

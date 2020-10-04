@@ -1,4 +1,4 @@
-package com.marwit.offerbuilder.quotation;
+package com.marwit.offerbuilder.quotationdetails;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,15 +13,15 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class OrderDetails {
+public class QuotationDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
-    private String orderDetailsId;
+    private String quotationDetailsId;
 
     @NotNull
-    private String orderDetailsDisplayName;
+    private String quotationDetailsDisplayName;
 
-    private List<String> orderDetail;
+    private List<String> quotationDetail;
 }

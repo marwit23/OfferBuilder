@@ -1,7 +1,7 @@
-package com.marwit.offerbuilder.customer;
+package com.marwit.offerbuilder.inquiry;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.marwit.offerbuilder.customer.ContactPerson;
+import com.marwit.offerbuilder.contactperson.ContactPerson;
 import com.marwit.offerbuilder.customer.Customer;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +21,8 @@ public class Inquiry {
     private Long inquiryId;
 
     @Nullable
+    @ManyToOne
+    @JoinColumn(name = "contactPersonId")
     private ContactPerson contactPerson;
 
     @NotNull

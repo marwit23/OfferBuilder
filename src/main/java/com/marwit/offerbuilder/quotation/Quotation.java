@@ -1,10 +1,12 @@
 package com.marwit.offerbuilder.quotation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.marwit.offerbuilder.customer.Customer;
-import com.marwit.offerbuilder.customer.Inquiry;
-import com.marwit.offerbuilder.technicaldetails.TechnicalSpecification;
+import com.marwit.offerbuilder.inquiry.Inquiry;
+import com.marwit.offerbuilder.quotationdetails.QuotationDetails;
+import com.marwit.offerbuilder.technicalspecificationimpl.model.TechnicalSpecification;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -37,11 +39,12 @@ public class Quotation {
     @JsonProperty
     private String quotationItem;
 
+    @JsonIgnore
     private Inquiry inquiry;
 
     @ManyToOne
     @JoinColumn(name = "orderDetailsId")
-    private OrderDetails orderDetails;
+    private QuotationDetails quotationDetails;
 
     @ManyToOne
     private TechnicalSpecification technicalSpecification;
@@ -49,6 +52,6 @@ public class Quotation {
     private BigDecimal unitPrice;
 
     public String getQuotationItem() {
-        return "Quotation for" + technicalSpecification.getTechnicalDetailsName();
+        return "Quotation for" + technicalSpecification.getTechnicalSpecificationName();
     }
 }

@@ -2,7 +2,7 @@ package com.marwit.offerbuilder._constants;
 
 public enum Operator {
 
-    EQUALS("="),
+    EQUALS(": "),
     MORE_THAN(">"),
     LESS_THAN("<"),
     MORE_OR_EQUALS(">="),

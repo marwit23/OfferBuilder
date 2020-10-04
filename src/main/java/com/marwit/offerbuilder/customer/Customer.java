@@ -1,6 +1,8 @@
 package com.marwit.offerbuilder.customer;
 
 
+import com.marwit.offerbuilder.contactperson.ContactPerson;
+import com.marwit.offerbuilder.inquiry.Inquiry;
 import com.marwit.offerbuilder.quotation.Quotation;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +28,7 @@ public class Customer {
 
     private Locale.IsoCountryCode countryCode;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<ContactPerson> contactPersonList;
 
     @OneToMany(mappedBy = "customer")

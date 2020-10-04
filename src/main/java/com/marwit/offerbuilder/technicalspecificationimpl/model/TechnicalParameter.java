@@ -1,4 +1,4 @@
-package com.marwit.offerbuilder.technicaldetails;
+package com.marwit.offerbuilder.technicalspecificationimpl.model;
 
 import com.marwit.offerbuilder._constants.Operator;
 import com.marwit.offerbuilder._constants.UnitOfMeasurement;
@@ -21,16 +21,20 @@ public class TechnicalParameter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long parameterId;
+    private int priority;
 
     @NotNull
     private String parameterName;
 
+    @NotNull
     private Operator parameterOperator;
 
+    @Nullable
     private ValueScope valueScope;
 
-    @NotNull
+    // ! add not null constraint later
     private String parameterValue;
 
+    @NotNull
     private UnitOfMeasurement unitOfMeasurement;
 }

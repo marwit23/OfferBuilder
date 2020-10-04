@@ -1,5 +1,7 @@
-package com.marwit.offerbuilder.customer;
+package com.marwit.offerbuilder.contactperson;
 
+import com.marwit.offerbuilder.inquiry.Inquiry;
+import com.marwit.offerbuilder.customer.Customer;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,6 +29,9 @@ public class ContactPerson {
     @ManyToOne
     @JoinColumn(name = "customerId")
     private Customer customer;
+
+    @OneToMany(mappedBy = "contactPerson")
+    private Inquiry inquiry;
 
 
 }

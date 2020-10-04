@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.marwit23</groupId>
-	<artifactId>rfm</artifactId>
+	<artifactId>offerbuilder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>rfm</name>
+	<name>offerbuilder</name>
 	<description>Offer Builder</description>
 
 	<properties>
