@@ -1,25 +1,43 @@
 package com.marwit.offerbuilder.contactperson;
 
-import java.util.List;
+import com.marwit.offerbuilder._exceptions.EntityNotFoundException;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
+@Service
 public class ContactPersonServiceImpl implements ContactPersonService {
-    @Override
-    public List<ContactPerson> findAll() {
-        return null;
+
+    private ContactPersonRepository contactPersonRepository;
+
+    public ContactPersonServiceImpl(ContactPersonRepository contactPersonRepository) {
+        this.contactPersonRepository = contactPersonRepository;
     }
 
     @Override
-    public ContactPerson findById(Long customerId) {
-        return null;
+    public List<ContactPerson> findAll() {
+        return contactPersonRepository.findAll();
+    }
+
+    @Override
+    public ContactPerson findById(Long contactPersonId) {
+        Optional<ContactPerson> result = contactPersonRepository.findById(contactPersonId);
+        ContactPerson contactPerson;
+        if(result.isPresent()) contactPerson = result.get();
+        else throw new EntityNotFoundException("contact person", contactPersonId.toString());
+        return contactPerson;
     }
 
     @Override
     public void save(ContactPerson contactPerson) {
+        contactPersonRepository.save(contactPerson);
 
     }
 
     @Override
-    public void deleteById(Long customerId) {
+    public void deleteById(Long contactPersonId) {
+        contactPersonRepository.deleteById(contactPersonId);
 
     }
 }

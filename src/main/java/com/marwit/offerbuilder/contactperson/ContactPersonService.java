@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface ContactPersonService {
     List<ContactPerson> findAll();
-    ContactPerson findById(Long customerId);
+    ContactPerson findById(Long contactPersonId);
     void save(ContactPerson contactPerson);
-    void deleteById(Long customerId);
+    void deleteById(Long contactPersonId);
 
 
 }

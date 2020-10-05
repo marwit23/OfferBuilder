@@ -1,6 +1,5 @@
-package com.marwit.offerbuilder.technicalspecificationtemplate.model;
+package com.marwit.offerbuilder.specificationimpl.model;
 
-import com.marwit.offerbuilder.technicalspecificationimpl.model.TechnicalParameter;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class TechnicalComponentTemplate {
+public class Component {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,5 +19,5 @@ public class TechnicalComponentTemplate {
     private String componentName;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<TechnicalParameter> parameterList;
+    private List<Parameter> parameterList;
 }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.marwit.offerbuilder.customer.Customer;
 import com.marwit.offerbuilder.inquiry.Inquiry;
 import com.marwit.offerbuilder.quotationdetails.QuotationDetails;
-import com.marwit.offerbuilder.technicalspecificationimpl.model.TechnicalSpecification;
+import com.marwit.offerbuilder.specificationimpl.model.Specification;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -47,11 +47,11 @@ public class Quotation {
     private QuotationDetails quotationDetails;
 
     @ManyToOne
-    private TechnicalSpecification technicalSpecification;
+    private Specification specification;
 
     private BigDecimal unitPrice;
 
     public String getQuotationItem() {
-        return "Quotation for" + technicalSpecification.getTechnicalSpecificationName();
+        return "Quotation for" + specification.getSpecificationName();
     }
 }

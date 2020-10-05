@@ -1,4 +1,4 @@
-package com.marwit.offerbuilder.technicalspecificationtemplate.model;
+package com.marwit.offerbuilder.specificationimpl.model;
 
 import com.marwit.offerbuilder._constants.Operator;
 import com.marwit.offerbuilder._constants.UnitOfMeasurement;
@@ -12,12 +12,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 
 @Getter
 @Setter
 @Entity
-public class TechnicalParameterTemplate {
+public class Parameter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,7 +32,7 @@ public class TechnicalParameterTemplate {
     @Nullable
     private ValueScope valueScope;
 
-    @Null
+    // ! add not null constraint later
     private String parameterValue;
 
     @NotNull

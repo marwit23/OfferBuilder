@@ -23,9 +23,7 @@ public class Customer {
 
     @NotNull
     private String companyName;
-
     private String companyAddress;
-
     private Locale.IsoCountryCode countryCode;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)

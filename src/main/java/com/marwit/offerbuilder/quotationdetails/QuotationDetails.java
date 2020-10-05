@@ -18,7 +18,7 @@ public class QuotationDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
-    private String quotationDetailsId;
+    private Long quotationDetailsId;
 
     @NotNull
     private String quotationDetailsDisplayName;
